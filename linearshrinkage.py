@@ -78,14 +78,14 @@ class LedoitAndWolf_2001:
         """
         The main function run it in order to get the weighted estimator
         """
-        shirnkage_constant, p, r, c = self.compute_optimal_shrinkage_constant_for_SIM()
-        shirnkage_parameter = shirnkage_constant/self.num_observations
-        if 0 < shirnkage_parameter < 1:
-            res = shirnkage_parameter*self.SIM_covariance + (1-shirnkage_parameter)*self.MLE_estimator
+        shrinkage_constant, p, r, c = self.compute_optimal_shrinkage_constant_for_SIM()
+        shrinkage_parameter = shrinkage_constant/self.num_observations
+        if 0 < shrinkage_parameter < 1:
+            res = shrinkage_parameter*self.SIM_covariance + (1-shrinkage_parameter)*self.MLE_estimator
             # print 'using SIM'
         else:
             res = self.MLE_estimator
             # print 'not using SIM'
-        return res, shirnkage_constant, shirnkage_parameter, p, r, c
+        return res, shrinkage_constant, shrinkage_parameter, p, r, c
 
 
