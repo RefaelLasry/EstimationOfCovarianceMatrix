@@ -92,8 +92,7 @@ class DirectKernel(object):
             dtilde = np.hstack((dtilde0*np.ones((self.p-self.n, 1)).reshape(self.p-self.n,), dtilde1))
 
         dhat = self.pav(dtilde)
-        d_matrix = np.diag(dhat)
-        sigmahat = self.eigenvectors.dot(d_matrix).dot(self.eigenvectors.T)
+        sigmahat = np.dot(self.eigenvectors, (np.tile(dhat, (self.p, 1)).T * self.eigenvectors.T))
         return sigmahat
 
 
