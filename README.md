@@ -1,9 +1,11 @@
 # Estimation of covariance matrix
 
-Implementation of two methods. 
+This project contains implementation of two methods and a document with detailed explanation of linear shrinkage along
+with introduction to the problem of covariance estimation.   
 
 ## 1. Linear shrinkage 
-"Improved Estimation of the Covariance Matrix of Stock Returns With an Application to Portfolio Selection / Ledoit and Wolf 2001"
+"Improved Estimation of the Covariance Matrix of Stock Returns With an Application to Portfolio Selection / Ledoit and
+Wolf 2001"
 
 http://www.econ.uzh.ch/en/people/faculty/wolf/publications.html
 
