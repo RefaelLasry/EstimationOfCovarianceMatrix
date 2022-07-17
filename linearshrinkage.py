@@ -1,12 +1,12 @@
-# Implementation of Ledoit and Wolf (2001)
-# "Improved Estimation of the Covariance Matrix of Stock Returns With an Application to Portfolio Selection"
-# http://www.ledoit.net/ole2_abstract.htm
-
 from utils import *
 
 
-class LedoitAndWolf_2001(object):
-
+class LedoitAndWolf_2001:
+    """
+    Implementation of Ledoit and Wolf (2001)
+    "Improved Estimation of the Covariance Matrix of Stock Returns With an Application to Portfolio Selection"
+    http://www.ledoit.net/ole2_abstract.htm
+    """
     def __init__(self, data_matrix):
         self.data_matrix = data_matrix
         self.num_variables = data_matrix.shape[1]
@@ -74,8 +74,10 @@ class LedoitAndWolf_2001(object):
 
         return shrinkage_param, p, r, c
 
-    ''' The main function run it in order to get the weighted estimator'''
     def compute_weighted_estimator(self):
+        """
+        The main function run it in order to get the weighted estimator
+        """
         shirnkage_constant, p, r, c = self.compute_optimal_shrinkage_constant_for_SIM()
         shirnkage_parameter = shirnkage_constant/self.num_observations
         if 0 < shirnkage_parameter < 1:

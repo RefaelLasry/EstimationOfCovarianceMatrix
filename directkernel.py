@@ -1,12 +1,13 @@
-'''' implementation of the article:
-"Direct Nonlinear Shrinkage Estimation of Large-Dimensional Covariance Matrices"
-Ledoit and Wolf, Oct 2017,
-translated from anthers Matlab code'''
 import numpy as np
 
 
-class DirectKernel(object):
-
+class DirectKernel:
+    """
+    Implementation of the article:
+    "Direct Nonlinear Shrinkage Estimation of Large-Dimensional Covariance Matrices"
+    Ledoit and Wolf, Oct 2017,
+    translated from authors' Matlab code
+    """
     def __init__(self, X):
         self.X = X
         self.n = None
